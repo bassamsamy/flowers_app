@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../AppColors.dart';
+import '../resources/AppColors.dart';
 
 
 class Custombtn extends StatelessWidget {
@@ -15,10 +15,10 @@ class Custombtn extends StatelessWidget {
       width: 343,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              backgroundColor: ispressed ? AppColors.primryColor : AppColors.secandryColor,
-              shape: StadiumBorder(
+              backgroundColor: ispressed ? AppColors.primaryColor : AppColors.backgroundColor,
+              shape: const StadiumBorder(
                   side: BorderSide(
-                color: AppColors.secandryColor,
+                color: AppColors.grey,
               ))),
           onPressed: onPressed,
           child: Text(

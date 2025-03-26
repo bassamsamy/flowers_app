@@ -1,3 +1,5 @@
+import 'package:flowers_app/core/app_theme/my_theme_data.dart';
+import 'package:flowers_app/core/routes_manager/route_generator.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,13 +9,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: RouteGenerator.generateRoutes,
+      title: "Flowers App",
+      theme: AppTheme.myTheme,
     );
   }
 }
-
-
