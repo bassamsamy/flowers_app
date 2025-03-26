@@ -1,4 +1,4 @@
-import 'package:flowers_app/core/AppColors.dart';
+import 'package:flowers_app/core/resources/AppColors.dart';
 import 'package:flutter/material.dart';
 
 
@@ -9,9 +9,9 @@ class LoadingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: CircularProgressIndicator(
-        color: AppColors.secandryColor
+        color: AppColors.primaryColor
       ),
     );
   }

@@ -1,13 +1,3 @@
-class SvgAssets {
+class SvgAssets {}
 
-}
-
-class ImageAssets {
-
-}
-
-
- class FontFamily{
-
-
- }
+class ImageAssets {}
