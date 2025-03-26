@@ -1,14 +1,7 @@
 class AppConstants {
+  static const String fontFamily = "Inter";
 }
 
+class EndPoints {}
 
-
-class EndPoint {
-
-
-}
-
-
-class ApiKey {
-
-}
+class ApiKey {}
