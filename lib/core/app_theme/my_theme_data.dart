@@ -14,7 +14,7 @@ class AppTheme {
           color: AppColors.blackTextColor,
           fontSize: 20,
           fontWeight: FontWeight.w500,
-          fontFamily: AppConstants.fontFamily),
+          fontFamily: Constants.fontFamily),
     ),
   );
 }
