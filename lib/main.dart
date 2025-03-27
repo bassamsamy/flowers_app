@@ -1,5 +1,6 @@
 import 'package:flowers_app/core/app_theme/my_theme_data.dart';
 import 'package:flowers_app/core/routes_manager/route_generator.dart';
+import 'package:flowers_app/core/routes_manager/routes_names.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.generateRoutes,
+      initialRoute: RoutesNames.forgetPassword,
       title: "Flowers App",
       theme: AppTheme.myTheme,
     );

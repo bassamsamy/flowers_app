@@ -1,6 +1,8 @@
 class RoutesNames {
   static const String splash = "/";
   static const String layout = "/layout";
+  static const String forgetPassword = 'forgetPassword';
+
 
 
 }
