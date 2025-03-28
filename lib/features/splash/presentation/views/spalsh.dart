@@ -29,7 +29,7 @@ class _SplashViewState extends State<SplashView>
     _controller.forward();
 
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushNamed(context, RoutesNames.layout);
+      Navigator.pushNamed(context, RoutesNames.login);
     });
   }
 
