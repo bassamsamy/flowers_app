@@ -1,7 +1,6 @@
 import 'package:flowers_app/core/api_manager/api_execute.dart';
 import 'package:flowers_app/core/models/result.dart';
 
-import 'package:flowers_app/core/models/user_model.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../core/api_manager/api_constants.dart';
@@ -15,13 +14,17 @@ class AuthDataSourceImpl implements AuthDataSource {
   AuthDataSourceImpl(this.apiManager);
 
   @override
-  Future<Result<UserModel>> login(String email, String password) async {
-    return  ApiExecute.executeApi(
+  Future<Result> login(String email, String password) async {
+    return ApiExecute.executeApi(
       () async {
         final response = await apiManager.post(
             ApiConstants.loginEndPoint, {"email": email, "password": password});
 
-        return UserModel.fromJson(response.data);
+        if (response.statusCode == 200) {
+          return Success(null);
+        } else {
+          return Error(Exception("Something went wrong"));
+        }
       },
     );
   }

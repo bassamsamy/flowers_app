@@ -6,7 +6,10 @@ sealed class LoginState {}
 final class LoginInitial extends LoginState {}
 final class LoginLoading extends LoginState {}
 final class LoginSuccess extends LoginState {}
+final class LoginCheckBoxPressed extends LoginState {
+
+}
 final class LoginFailure extends LoginState {
-  final Exception exception;
-  LoginFailure(this.exception);
+  final String message;
+  LoginFailure(this.message);
 }

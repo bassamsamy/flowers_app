@@ -13,6 +13,6 @@ class AuthRepoImpl implements AuthRepo {
   AuthRepoImpl(this._authService);
 
   @override
-  Future<Result<UserModel>> login(String email, String password) =>
+  Future<Result> login(String email, String password) =>
       _authService.login(email, password);
 }

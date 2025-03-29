@@ -10,6 +10,6 @@ class LoginUseCase {
 
   LoginUseCase(this._authRepo);
 
-  Future<Result<UserModel>> call(String email, String password) =>
+  Future<Result> call(String email, String password) =>
       _authRepo.login(email, password);
 }
