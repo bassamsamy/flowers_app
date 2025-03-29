@@ -121,6 +121,7 @@ class LoginView extends StatelessWidget {
                             cubit.login(
                               _emailController.text,
                               _passwordController.text,
+                              isChecked,
                             );
                           }
                         },

@@ -14,9 +14,9 @@ class LoginCubit extends Cubit<LoginState> {
 
   LoginCubit(this._loginUseCase) : super(LoginInitial());
 static LoginCubit get(context) => BlocProvider.of(context);
-  Future<void> login(String email, String password) async {
+  Future<void> login(String email, String password,bool rememberMe) async {
     emit(LoginLoading());
-    final result = await _loginUseCase(email, password);
+    final result = await _loginUseCase(email, password, rememberMe);
     switch (result) {
       case Success():
         emit(LoginSuccess());
