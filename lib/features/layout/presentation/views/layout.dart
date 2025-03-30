@@ -6,11 +6,11 @@ class Layout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(UserModel.instance.token);
+
     return Scaffold(
       body: Center(
         child: Text(
-          UserModel.instance.firstName ?? "null",
+          UserModel.instance.firstName ?? "manga",
           style: TextStyle(fontSize: 50, color: Colors.black),
         ),
       ),

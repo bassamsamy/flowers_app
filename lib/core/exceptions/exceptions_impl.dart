@@ -32,3 +32,7 @@ class ClientError implements Exception {
     return errorModel?.message ?? "Something went wrong";
   }
 }
+class CustomException implements Exception {
+  final String message;
+  CustomException(this.message);
+}
