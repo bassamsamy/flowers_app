@@ -41,6 +41,10 @@ class LoginView extends StatelessWidget {
       builder: (context, state) {
         return ModalProgressHUD(
           inAsyncCall: state is LoginLoading,
+          color: AppColors.primaryColor,
+          progressIndicator: const CircularProgressIndicator(
+            color: AppColors.primaryColor,
+          ),
           child: Scaffold(
             appBar: AppBar(
               title: const Text('Login'),
@@ -100,7 +104,9 @@ class LoginView extends StatelessWidget {
                           ),
                           const Spacer(),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, RoutesNames.forgetPassword);
+                            },
                             child: const Text(
                               "Forgot Password?",
                               style: TextStyle(
@@ -121,6 +127,7 @@ class LoginView extends StatelessWidget {
                             cubit.login(
                               _emailController.text,
                               _passwordController.text,
+                              isChecked,
                             );
                           }
                         },
