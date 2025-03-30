@@ -5,7 +5,7 @@ import 'package:meta/meta.dart';
 
 import '../../../../../core/models/error_model.dart';
 import '../../../../../core/models/result.dart';
-import '../../../domain/use_cases/login_use_case.dart';
+import '../../../domain/useCases/login_use_case.dart';
 
 part 'login_state.dart';
 

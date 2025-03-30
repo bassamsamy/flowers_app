@@ -1,22 +1,21 @@
 import 'package:flowers_app/core/api_manager/api_execute.dart';
 import 'package:flowers_app/core/models/result.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 import 'package:injectable/injectable.dart';
 
 import '../../../../core/api_manager/api_constants.dart';
 import '../../../../core/api_manager/api_manger.dart';
 import '../../../../core/models/user_model.dart';
-import 'package:flowers_app/core/api_manager/api_execute.dart';
-import 'package:flowers_app/core/api_manager/api_manger.dart';
-import 'package:flowers_app/core/models/result.dart';
-import 'package:injectable/injectable.dart';
 
 import '../auth_data_source/auth_data_source.dart';
 
 @Injectable(as: AuthDataSource)
 class AuthDataSourceImpl implements AuthDataSource {
   AuthDataSourceImpl({required this.apiManager});
+
   ApiManager apiManager;
+
   @override
   Future<Result> forgetPassword(String email) {
     return ApiExecute.executeApi(
@@ -27,11 +26,6 @@ class AuthDataSourceImpl implements AuthDataSource {
       },
     );
   }
-@Injectable(as: AuthDataSource)
-class AuthDataSourceImpl implements AuthDataSource {
-  final ApiManager apiManager;
-
-  AuthDataSourceImpl(this.apiManager);
 
   @override
   Future<Result> verifyOtp(String code) {
@@ -54,6 +48,7 @@ class AuthDataSourceImpl implements AuthDataSource {
       },
     );
   }
+
   @override
   Future<Result> login(String email, String password, bool rememberMe) async {
     return ApiExecute.executeApi(
