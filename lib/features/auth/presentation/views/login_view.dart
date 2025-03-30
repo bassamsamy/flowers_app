@@ -152,7 +152,10 @@ class LoginView extends StatelessWidget {
                           ),
                           InkWell(
                             onTap: () {
-                              // ToDo navigate to sign up screen
+                              Navigator.pushNamed(
+                                context,
+                                RoutesNames.signUp,
+                              );
                             },
                             child: Text(
                               "Sign up",

@@ -1,7 +1,7 @@
 import '../models/error_model.dart';
 
 class ServerError implements Exception {
-  ErrorModel? errorModel;
+  final ErrorModel? errorModel;
 
   ServerError(this.errorModel);
 
@@ -31,4 +31,8 @@ class ClientError implements Exception {
   String toString() {
     return errorModel?.message ?? "Something went wrong";
   }
+}
+
+abstract class CustomException implements Exception {
+  String get readableMessage;
 }

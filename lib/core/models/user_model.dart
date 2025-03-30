@@ -11,7 +11,6 @@ class UserModel {
   String? id;
   String? token;
   DateTime? createdAt;
-
   UserModel._();
 
   static final UserModel _singletonInstance = UserModel._();

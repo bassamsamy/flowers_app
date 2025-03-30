@@ -4,6 +4,8 @@ import 'package:flowers_app/core/routes_manager/routes_names.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
+  const SplashView({super.key});
+
   @override
   _SplashViewState createState() => _SplashViewState();
 }
