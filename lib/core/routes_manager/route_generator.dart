@@ -27,7 +27,7 @@ class RouteGenerator {
         );
       case RoutesNames.layout:
         return MaterialPageRoute(
-          builder: (context) => const Layout(),
+          builder: (context) =>  Layout(),
           settings: settings,
         );
 

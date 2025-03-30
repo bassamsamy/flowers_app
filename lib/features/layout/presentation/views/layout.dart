@@ -6,12 +6,12 @@ import 'cart_screen.dart';
 import 'categories_screen.dart';
 import 'home_screen.dart';
 
-class MainScreen extends StatefulWidget {
+class Layout extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _LayoutState createState() => _LayoutState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _LayoutState extends State<Layout> {
   int _selectedIndex = 3;
 
   final List<Widget> _screens = [
