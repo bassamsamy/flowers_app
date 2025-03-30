@@ -10,7 +10,7 @@ String handleErrorMessage(Exception? ex,BuildContext context){
       message = ex.errorModel?.message;
   }
     case ClientError():{
-      message = "Please login again";
+      message = ex.errorModel?.message;
   }
     case NetworkError():{
       message = "NetworkError";//.tr();

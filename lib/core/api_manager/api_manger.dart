@@ -17,11 +17,14 @@ class ApiManager {
     _dio.options.headers = {"token": UserModel.instance.token};
   }
 
-  Future<Response> post(String endPoint, dynamic data, {dynamic headers}) async {
+  Future<Response> post(String endPoint, dynamic data,
+      {dynamic headers}) async {
     return await _dio.post(
       endPoint,
       data: data,
-      options: Options(headers: headers),
+      options: Options(
+        headers: headers,
+      ),
     );
   }
 
@@ -29,19 +32,29 @@ class ApiManager {
     return await _dio.get(endPoint, options: Options(headers: headers));
   }
 
-  Future<Response> delete(String endPoint, {dynamic headers, dynamic body}) async {
-    return await _dio.delete(
+  Future<Response> delete(String endPoint,
+      {dynamic headers, dynamic body}) async {
+    return await _dio.delete(endPoint,
+        options: Options(headers: headers), data: body);
+  }
+  Future<Response> put(String endPoint, dynamic data,
+      {dynamic headers}) async {
+    return await _dio.put(
       endPoint,
-      options: Options(headers: headers),
-      data: body,
+      data: data,
+      options: Options(
+        headers: headers,
+      ),
     );
   }
-
-  Future<Response> patch(String endPoint, {dynamic data, dynamic headers}) async {
+  Future<Response> patch(String endPoint,
+      {dynamic data, dynamic headers}) async {
     return await _dio.patch(
       endPoint,
       data: data,
-      options: Options(headers: headers),
+      options: Options(
+        headers: headers,
+      ),
     );
   }
 }

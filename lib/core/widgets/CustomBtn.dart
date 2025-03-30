@@ -12,10 +12,11 @@ class Custombtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 48,
-      width: 343,
+      width: 370,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
               backgroundColor: ispressed ? AppColors.primaryColor : AppColors.backgroundColor,
+              disabledBackgroundColor: AppColors.darkGrey,
               shape: const StadiumBorder(
                   side: BorderSide(
                 color: AppColors.grey,
