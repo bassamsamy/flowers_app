@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/auth/presentation/views/login_view.dart';
-import '../../features/splash/data/repo/auto_login_repo.dart';
+import '../../features/splash/domain/use_cases/get_user_data.dart';
 import '../../features/splash/presentation/views/spalsh.dart';
 
 class RouteGenerator {
@@ -16,20 +16,18 @@ class RouteGenerator {
     switch (settings.name) {
       case RoutesNames.splash:
         return MaterialPageRoute(
-          builder: (context) =>
-              BlocProvider(
-                create: (context) => AutoLoginCubit(getIt<AutoLoginRepo>()),
-                child: const SplashView(),
-              ),
+          builder: (context) => BlocProvider(
+            create: (context) => AutoLoginCubit(getIt<GetUserDataUseCase>()),
+            child: const SplashView(),
+          ),
           settings: settings,
         );
       case RoutesNames.login:
         return MaterialPageRoute(
-          builder: (context) =>
-              BlocProvider(
-                create: (context) => LoginCubit(getIt<LoginUseCase>()),
-                child: LoginView(),
-              ),
+          builder: (context) => BlocProvider(
+            create: (context) => LoginCubit(getIt<LoginUseCase>()),
+            child: LoginView(),
+          ),
           settings: settings,
         );
       case RoutesNames.layout:
@@ -40,11 +38,10 @@ class RouteGenerator {
 
       default:
         return MaterialPageRoute(
-          builder: (context) =>
-              BlocProvider(
-                create: (context) => AutoLoginCubit(getIt<AutoLoginRepo>()),
-                child: const SplashView(),
-              ),
+          builder: (context) => BlocProvider(
+            create: (context) => AutoLoginCubit(getIt<GetUserDataUseCase>()),
+            child: const SplashView(),
+          ),
           settings: settings,
         );
     }

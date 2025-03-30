@@ -7,13 +7,15 @@ import 'package:injectable/injectable.dart';
 import '../../../../core/api_manager/api_manger.dart';
 import '../../../../core/exceptions/exceptions_impl.dart';
 import '../../../../core/models/user_model.dart';
+import '../auto_login_data_source/auto_login_data_source.dart';
 
-@injectable
-class AutoLoginRepo {
-  const AutoLoginRepo(this._apiManager);
+@Injectable(as : AutoLoginDataSource)
+class AutoLoginDataSourceImp implements AutoLoginDataSource {
+  const AutoLoginDataSourceImp(this._apiManager);
 
   final ApiManager _apiManager;
 
+  @override
   Future<Result> autoLogin() async {
     try {
       const storage = FlutterSecureStorage();
@@ -23,11 +25,13 @@ class AutoLoginRepo {
         return Error(CustomException("Auto login failed"));
       }
 
-      ApiExecute.executeApi(
+      await ApiExecute.executeApi(
         () async {
-          final response = await _apiManager.get(ApiConstants.getUserData);
+          final response = await _apiManager.get(ApiConstants.getUserData,
+              headers: {'Authorization': 'Bearer $token '});
+
           UserModel.instance.setFromJson(response.data);
-          return response;
+          UserModel.instance.token = token;
         },
       );
 

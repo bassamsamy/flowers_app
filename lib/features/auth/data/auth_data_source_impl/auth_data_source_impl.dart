@@ -21,7 +21,7 @@ class AuthDataSourceImpl implements AuthDataSource {
       () async {
         final response = await apiManager.post(
             ApiConstants.loginEndPoint, {"email": email, "password": password});
-
+        UserModel.instance.setFromJson(response.data);
         if (response.statusCode == 200) {
           const storage = FlutterSecureStorage();
           if (rememberMe) {

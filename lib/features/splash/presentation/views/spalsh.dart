@@ -47,7 +47,7 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
     cubit.autoLogin();
 
     _authSubscription = cubit.stream.listen((state) {
-      print('Auth State: $state');
+
 
       if (state is AutoLoginSuccess) {
         if (mounted) {
