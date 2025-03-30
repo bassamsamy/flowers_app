@@ -11,7 +11,7 @@ class Layout extends StatelessWidget {
       body: Center(
         child: Text(
           UserModel.instance.firstName ?? "null",
-          style: TextStyle(fontSize: 50, color: Colors.black),
+          style: const TextStyle(fontSize: 50, color: Colors.black),
         ),
       ),
     );

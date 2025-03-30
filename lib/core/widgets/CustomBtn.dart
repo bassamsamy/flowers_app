@@ -23,7 +23,7 @@ class Custombtn extends StatelessWidget {
           onPressed: onPressed,
           child: Text(
             Name,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           )),
     );
   }

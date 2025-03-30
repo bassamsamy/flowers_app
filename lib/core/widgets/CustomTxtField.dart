@@ -11,7 +11,7 @@ class CustomTxtField extends StatelessWidget {
   Function(String)? onchanged;
 
   CustomTxtField(
-      {required this.LabelName,
+      {super.key, required this.LabelName,
       required this.controller,
       required this.onchanged,
       required this.validator,
