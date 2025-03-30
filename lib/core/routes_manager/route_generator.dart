@@ -1,5 +1,7 @@
 import 'package:flowers_app/core/routes_manager/routes_names.dart';
-import 'package:flowers_app/features/auth/forgetPassword/presentation/views/forget-password.dart';
+import 'package:flowers_app/features/auth/presentation/views/forget_password.dart';
+import 'package:flowers_app/features/auth/presentation/views/otp_view.dart';
+import 'package:flowers_app/features/auth/presentation/views/reset_password.dart';
 import 'package:flowers_app/features/layout/presentation/views/layout.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +23,16 @@ class RouteGenerator {
         case RoutesNames.forgetPassword:
         return MaterialPageRoute(
           builder: (context) =>  ForgetPassword(),
+          settings: settings,
+        );
+        case RoutesNames.opt:
+        return MaterialPageRoute(
+          builder: (context) => OtpScreen(arguments:settings.arguments),
+          settings: settings,
+        );
+        case RoutesNames.resetPassword:
+        return MaterialPageRoute(
+          builder: (context) => ResetPassword(arguments:settings.arguments),
           settings: settings,
         );
       default:

@@ -16,6 +16,7 @@ class Custombtn extends StatelessWidget {
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
               backgroundColor: ispressed ? AppColors.primaryColor : AppColors.backgroundColor,
+              disabledBackgroundColor: AppColors.darkGrey,
               shape: const StadiumBorder(
                   side: BorderSide(
                 color: AppColors.grey,

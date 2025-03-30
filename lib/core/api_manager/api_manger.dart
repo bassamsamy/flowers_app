@@ -38,7 +38,16 @@ class ApiManager {
     return await _dio.delete(endPoint,
         options: Options(headers: headers), data: body);
   }
-
+  Future<Response> put(String endPoint, dynamic data,
+      {dynamic headers}) async {
+    return await _dio.put(
+      endPoint,
+      data: data,
+      options: Options(
+        headers: headers,
+      ),
+    );
+  }
   Future<Response> patch(String endPoint,
       {dynamic data, dynamic headers}) async {
     return await _dio.patch(
@@ -49,4 +58,9 @@ class ApiManager {
       ),
     );
   }
+}
+@module
+abstract class RegisterModule {
+  @singleton
+  Dio dio()=>Dio();
 }
