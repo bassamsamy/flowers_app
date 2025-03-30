@@ -21,6 +21,8 @@ dependencies:
   flutter_timer_countdown: ^1.0.7
   pinput: ^5.0.1
 
+  flutter_secure_storage: ^9.2.4
+
 
 
 

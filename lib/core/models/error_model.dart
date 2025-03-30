@@ -5,7 +5,7 @@ class ErrorModel {
     message = json['error'];
   }
 
-  String? message;
+   String? message;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

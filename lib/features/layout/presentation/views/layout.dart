@@ -1,3 +1,4 @@
+import 'package:flowers_app/core/models/user_model.dart';
 import 'package:flutter/material.dart';
 
 class Layout extends StatelessWidget {
@@ -5,9 +6,14 @@ class Layout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-     body: 
-      Center(child: Text("layout",style: TextStyle(fontSize: 50),),),
+
+    return Scaffold(
+      body: Center(
+        child: Text(
+          UserModel.instance.firstName ?? "manga",
+          style: TextStyle(fontSize: 50, color: Colors.black),
+        ),
+      ),
     );
   }
 }

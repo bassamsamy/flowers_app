@@ -4,7 +4,6 @@ import 'package:injectable/injectable.dart';
 
 import 'api_constants.dart';
 
-@injectable
 @singleton
 class ApiManager {
   final Dio _dio;
@@ -62,5 +61,5 @@ class ApiManager {
 @module
 abstract class RegisterModule {
   @singleton
-  Dio dio()=>Dio();
+  Dio dio() => Dio();
 }
