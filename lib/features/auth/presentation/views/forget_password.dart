@@ -121,7 +121,7 @@ class ForgetPassword extends StatelessWidget {
                       BlocBuilder<ForgetPasswordViewModel, ForgetPasswordState>(
                         builder: (context, state) {
                           return Custombtn(
-                            Name: 'Continue',
+                            name: 'Continue',
                             onPressed: () {
                               if (_key.currentState!.validate()) {
                                 FocusScope.of(context).unfocus();

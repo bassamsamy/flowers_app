@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../resources/AppColors.dart';
 
-
 class Custombtn extends StatelessWidget {
-  Custombtn({super.key, required this.Name, required this.onPressed});
-  String Name = '';
-  void Function()? onPressed;
-  bool ispressed = true;
+  const Custombtn({super.key, required this.name, required this.onPressed});
+  final String name;
+  final void Function()? onPressed;
+  final bool ispressed = true;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -15,7 +14,9 @@ class Custombtn extends StatelessWidget {
       width: 370,
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              backgroundColor: ispressed ? AppColors.primaryColor : AppColors.backgroundColor,
+              backgroundColor: ispressed
+                  ? AppColors.primaryColor
+                  : AppColors.backgroundColor,
               disabledBackgroundColor: AppColors.darkGrey,
               shape: const StadiumBorder(
                   side: BorderSide(
@@ -23,8 +24,8 @@ class Custombtn extends StatelessWidget {
               ))),
           onPressed: onPressed,
           child: Text(
-            Name,
-            style: TextStyle(color: Colors.white),
+            name,
+            style: const TextStyle(color: Colors.white),
           )),
     );
   }

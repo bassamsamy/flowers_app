@@ -116,7 +116,7 @@ class ResetPassword extends StatelessWidget {
                           height: 35,
                         ),
                         Custombtn(
-                          Name: 'Confirm',
+                          name: 'Confirm',
                           onPressed: () {
                             if (_key.currentState!.validate()) {
                               FocusScope.of(context).unfocus();

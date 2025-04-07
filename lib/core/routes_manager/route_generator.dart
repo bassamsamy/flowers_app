@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/auth/presentation/views/login_view.dart';
+import '../../features/auth/presentation/views/signup.dart';
+import '../../features/auth/presentation/views/terms.dart';
 import '../../features/splash/domain/use_cases/get_user_data.dart';
 import '../../features/splash/presentation/views/spalsh.dart';
 import '../di/di.dart';
@@ -25,6 +27,16 @@ class RouteGenerator {
           ),
           settings: settings,
         );
+      case RoutesNames.signUp:
+        return MaterialPageRoute(
+          builder: (context) => SignUpView(),
+          settings: settings,
+        );
+      case RoutesNames.terms:
+        return MaterialPageRoute(
+          builder: (context) => const TermsView(),
+          settings: settings,
+        );
       case RoutesNames.login:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
@@ -35,22 +47,22 @@ class RouteGenerator {
         );
       case RoutesNames.layout:
         return MaterialPageRoute(
-          builder: (context) =>  Layout(),
+          builder: (context) => Layout(),
           settings: settings,
         );
-        case RoutesNames.forgetPassword:
+      case RoutesNames.forgetPassword:
         return MaterialPageRoute(
-          builder: (context) =>  ForgetPassword(),
+          builder: (context) => ForgetPassword(),
           settings: settings,
         );
-        case RoutesNames.opt:
+      case RoutesNames.opt:
         return MaterialPageRoute(
-          builder: (context) => OtpScreen(arguments:settings.arguments),
+          builder: (context) => OtpScreen(arguments: settings.arguments),
           settings: settings,
         );
-        case RoutesNames.resetPassword:
+      case RoutesNames.resetPassword:
         return MaterialPageRoute(
-          builder: (context) => ResetPassword(arguments:settings.arguments),
+          builder: (context) => ResetPassword(arguments: settings.arguments),
           settings: settings,
         );
       default:
