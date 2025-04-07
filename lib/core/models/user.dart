@@ -1,9 +1,5 @@
 import 'dart:convert';
 
-/// message : "success"
-/// user : {"firstName":"Elevate","lastName":"Tech","email":"peshoo@gmail.com","gender":"male","phone":"+201282383626","photo":"default-profile.png","role":"user","wishlist":[],"_id":"67f3fdda836ee8be7064852b","addresses":[],"createdAt":"2025-04-07T16:31:22.337Z"}
-/// token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjdmM2ZkZGE4MzZlZThiZTcwNjQ4NTJiIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NDQwNDM0ODJ9.34colBPxt0TJwOBCRX7OV75eTU947omivAkPF2llv6w"
-
 User userFromJson(String str) => User.fromJson(json.decode(str));
 String userToJson(User data) => json.encode(data.toJson());
 
@@ -63,11 +59,11 @@ class User {
 /// addresses : []
 /// createdAt : "2025-04-07T16:31:22.337Z"
 
-User userFromJson(String str) => User.fromJson(json.decode(str));
-String userToJson(User data) => json.encode(data.toJson());
+User userSignFromJson(String str) => User.fromJson(json.decode(str));
+String userSignToJson(User data) => json.encode(data.toJson());
 
-class User {
-  User({
+class UserSign {
+  UserSign({
     String? firstName,
     String? lastName,
     String? email,
@@ -93,7 +89,7 @@ class User {
     _createdAt = createdAt;
   }
 
-  User.fromJson(dynamic json) {
+  UserSign.fromJson(dynamic json) {
     _firstName = json['firstName'];
     _lastName = json['lastName'];
     _email = json['email'];
@@ -104,14 +100,14 @@ class User {
     if (json['wishlist'] != null) {
       _wishlist = [];
       json['wishlist'].forEach((v) {
-        _wishlist?.add(Dynamic.fromJson(v));
+        _wishlist?.add(v);
       });
     }
     _id = json['_id'];
     if (json['addresses'] != null) {
       _addresses = [];
       json['addresses'].forEach((v) {
-        _addresses?.add(Dynamic.fromJson(v));
+        _addresses?.add(v);
       });
     }
     _createdAt = json['createdAt'];
@@ -127,7 +123,7 @@ class User {
   String? _id;
   List<dynamic>? _addresses;
   String? _createdAt;
-  User copyWith({
+  UserSign copyWith({
     String? firstName,
     String? lastName,
     String? email,
@@ -140,7 +136,7 @@ class User {
     List<dynamic>? addresses,
     String? createdAt,
   }) =>
-      User(
+      UserSign(
         firstName: firstName ?? _firstName,
         lastName: lastName ?? _lastName,
         email: email ?? _email,

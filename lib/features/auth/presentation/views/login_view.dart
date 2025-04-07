@@ -105,7 +105,8 @@ class LoginView extends StatelessWidget {
                           const Spacer(),
                           TextButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, RoutesNames.forgetPassword);
+                              Navigator.pushNamed(
+                                  context, RoutesNames.forgetPassword);
                             },
                             child: const Text(
                               "Forgot Password?",
@@ -159,7 +160,7 @@ class LoginView extends StatelessWidget {
                           ),
                           InkWell(
                             onTap: () {
-                              // ToDo navigate to sign up screen
+                              Navigator.pushNamed(context, RoutesNames.signUp);
                             },
                             child: Text(
                               "Sign up",

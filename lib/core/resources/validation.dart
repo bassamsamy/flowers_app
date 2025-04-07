@@ -1,4 +1,25 @@
 class Validation {
+  static String? validateNameTextField(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your name';
+    }
+    if (value.length < 2) {
+      return 'Name must be at least 2 characters long';
+    }
+    return null;
+  }
+
+  static String? validatePhoneTextField(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your phone number';
+    }
+    final phoneRegex = RegExp(r'^\+?[0-9]{10,15}$');
+    if (!phoneRegex.hasMatch(value)) {
+      return 'Please enter a valid phone number';
+    }
+    return null;
+  }
+
   static String? validateEmailTextField(String? value) {
     if (value == null || value.isEmpty) {
       return 'Please enter your email';

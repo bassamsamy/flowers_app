@@ -1,12 +1,6 @@
 import 'package:flowers_app/core/models/result.dart';
 import 'package:flowers_app/features/auth/data/auth_data_source/auth_data_source.dart';
 import 'package:injectable/injectable.dart';
-
-import 'package:flowers_app/core/models/result.dart';
-
-import 'package:flowers_app/core/models/user_model.dart';
-import 'package:injectable/injectable.dart';
-
 import '../../domain/auth_repo/auth_repo.dart';
 
 @Injectable(as: AuthRepo)
@@ -14,6 +8,29 @@ class AuthRepoImpl implements AuthRepo {
   AuthRepoImpl({required this.authDataSource});
 
   AuthDataSource authDataSource;
+
+  @override
+  Future<Result> signUp(
+    String firstName,
+    String lastName,
+    String email,
+    String password,
+    String phone,
+    String rePassword,
+    String userName,
+    String gender,
+  ) {
+    return authDataSource.signUp(
+      firstName,
+      lastName,
+      email,
+      password,
+      rePassword,
+      phone,
+      userName,
+      gender,
+    );
+  }
 
   @override
   Future<Result> forgetPassword(String email) {

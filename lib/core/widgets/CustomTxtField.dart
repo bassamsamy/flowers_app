@@ -4,7 +4,7 @@ import '../resources/AppColors.dart';
 
 class CustomTxtField extends StatelessWidget {
   String LabelName = '';
-  bool  isSecured=false;
+  bool isSecured = false;
   Widget? suffix;
   TextEditingController controller;
   String? Function(String?)? validator;
@@ -15,7 +15,7 @@ class CustomTxtField extends StatelessWidget {
       required this.controller,
       required this.onchanged,
       required this.validator,
-      this.isSecured=false,
+      this.isSecured = false,
       this.suffix});
 
   @override
