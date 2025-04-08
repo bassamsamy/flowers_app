@@ -24,6 +24,7 @@ import '../../features/auth/domain/useCases/forget_password_use_case.dart'
 import '../../features/auth/domain/useCases/login_use_case.dart' as _i617;
 import '../../features/auth/domain/useCases/reset_password_use_case.dart'
     as _i799;
+import '../../features/auth/domain/useCases/signup.dart' as _i867;
 import '../../features/auth/domain/useCases/verify_otp_use_case.dart' as _i661;
 import '../../features/auth/presentation/cubits/forget_password_cubtit/forget_password_cubit.dart'
     as _i351;
@@ -70,10 +71,12 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i617.LoginUseCase(gh<_i649.AuthRepo>()));
     gh.factory<_i438.ForgetPasswordUseCase>(
         () => _i438.ForgetPasswordUseCase(authRepo: gh<_i649.AuthRepo>()));
-    gh.factory<_i661.VerifyOtpUseCase>(
-        () => _i661.VerifyOtpUseCase(authRepo: gh<_i649.AuthRepo>()));
     gh.factory<_i799.ResetPasswordUseCase>(
         () => _i799.ResetPasswordUseCase(authRepo: gh<_i649.AuthRepo>()));
+    gh.factory<_i867.SignUpUseCase>(
+        () => _i867.SignUpUseCase(authRepo: gh<_i649.AuthRepo>()));
+    gh.factory<_i661.VerifyOtpUseCase>(
+        () => _i661.VerifyOtpUseCase(authRepo: gh<_i649.AuthRepo>()));
     gh.factory<_i622.OtpVerifyViewModel>(() => _i622.OtpVerifyViewModel(
         verifyOtpUseCase: gh<_i661.VerifyOtpUseCase>()));
     gh.factory<_i351.ForgetPasswordViewModel>(() =>
