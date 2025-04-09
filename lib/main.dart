@@ -2,9 +2,10 @@ import 'package:flowers_app/core/app_theme/my_theme_data.dart';
 import 'package:flowers_app/core/di/di.dart';
 import 'package:flowers_app/core/routes_manager/route_generator.dart';
 import 'package:flowers_app/core/routes_manager/routes_names.dart';
+import 'package:flowers_app/features/home/presentation/views/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
-import 'core/di/di.dart';
+
 
 void main() {
   configureDependencies();
@@ -18,9 +19,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      onGenerateRoute: RouteGenerator.generateRoutes,
+     // onGenerateRoute: RouteGenerator.generateRoutes,
       title: "Flowers App",
       theme: AppTheme.myTheme,
+      home: HomeScreen(),
     );
   }
 }
