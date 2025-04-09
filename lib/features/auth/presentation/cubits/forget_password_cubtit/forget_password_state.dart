@@ -8,7 +8,7 @@ class NavigatForgetPasswordState extends ForgetPasswordState {
 }
 
 class InvalidForgetPasswordState extends ForgetPasswordState {
-  Exception ? errorex;
+  Exception? errorex;
   InvalidForgetPasswordState({this.errorex});
 }
 

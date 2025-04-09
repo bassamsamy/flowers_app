@@ -13,8 +13,8 @@ class LoginCubit extends Cubit<LoginState> {
   final LoginUseCase _loginUseCase;
 
   LoginCubit(this._loginUseCase) : super(LoginInitial());
-static LoginCubit get(context) => BlocProvider.of(context);
-  Future<void> login(String email, String password,bool rememberMe) async {
+  static LoginCubit get(context) => BlocProvider.of(context);
+  Future<void> login(String email, String password, bool rememberMe) async {
     emit(LoginLoading());
     final result = await _loginUseCase(email, password, rememberMe);
     switch (result) {
@@ -24,6 +24,7 @@ static LoginCubit get(context) => BlocProvider.of(context);
         emit(LoginFailure(result.exception.toString()));
     }
   }
+
   void checkBoxPressed() {
     emit(LoginCheckBoxPressed());
   }

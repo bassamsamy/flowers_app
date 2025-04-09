@@ -105,7 +105,8 @@ class LoginView extends StatelessWidget {
                           const Spacer(),
                           TextButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, RoutesNames.forgetPassword);
+                              Navigator.pushNamed(
+                                  context, RoutesNames.forgetPassword);
                             },
                             child: const Text(
                               "Forgot Password?",

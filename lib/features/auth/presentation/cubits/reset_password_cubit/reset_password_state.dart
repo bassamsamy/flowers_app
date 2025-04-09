@@ -8,7 +8,8 @@ class NaviageRestPasswordState extends ResetPasswordState {
 }
 
 class InvalidResetPasswordState extends ResetPasswordState {
-  Exception ? exception;
+  Exception? exception;
   InvalidResetPasswordState({required this.exception});
 }
+
 class LoadingResetPasswordState extends ResetPasswordState {}

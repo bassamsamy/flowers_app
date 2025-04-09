@@ -29,11 +29,10 @@ class ForgetPassword extends StatelessWidget {
         listener: (context, state) {
           if (state is InvalidForgetPasswordState) {
             isErrorOccur = true;
-            if(state.errorex is! NetworkError ){
-
-            error = handleErrorMessage(state.errorex, context);
-            }else{
-                ScaffoldMessenger.of(context).showSnackBar(
+            if (state.errorex is! NetworkError) {
+              error = handleErrorMessage(state.errorex, context);
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   backgroundColor: Colors.red,
                   content: Text(

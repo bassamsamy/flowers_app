@@ -18,18 +18,22 @@ class AppTheme {
           fontFamily: Constants.fontFamily),
     ),
     textTheme: const TextTheme(
-      bodySmall: TextStyle(
-        fontSize: 14,
-        fontFamily: Constants.fontFamily,
-        fontWeight: FontWeight.w400,
-        color: AppColors.grey
-      ),
-      bodyMedium: TextStyle(
-        color: AppColors.backgroundColor,
-        fontSize: 16,
-        fontFamily: Constants.fontFamily,
-        fontWeight: FontWeight.w500,
-      )
-    )
+        bodySmall: TextStyle(
+            fontSize: 14,
+            fontFamily: Constants.fontFamily,
+            fontWeight: FontWeight.w400,
+            color: AppColors.grey),
+        bodyMedium: TextStyle(
+          color: AppColors.backgroundColor,
+          fontSize: 16,
+          fontFamily: Constants.fontFamily,
+          fontWeight: FontWeight.w500,
+        )),
+    tabBarTheme: TabBarThemeData(
+      // dividerColor: Colors.transparent,
+      tabAlignment: TabAlignment.start,
+      labelColor: AppColors.primaryColor,
+      indicatorColor: AppColors.primaryColor,
+    ),
   );
 }

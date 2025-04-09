@@ -8,8 +8,8 @@ class NavigatOtpState extends OtpVerifyState {
 }
 
 class InvalidOtpVerifyState extends OtpVerifyState {
-Exception? exception;
-InvalidOtpVerifyState({this.exception});
+  Exception? exception;
+  InvalidOtpVerifyState({this.exception});
 }
 
 class LoadOtpState extends OtpVerifyState {}

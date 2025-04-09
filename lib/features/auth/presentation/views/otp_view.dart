@@ -76,7 +76,8 @@ class _OtpScreenState extends State<OtpScreen> {
             return false;
           },
           builder: (context, state) {
-            bool IsInvalid = state is InvalidOtpVerifyState&&state.exception is! NetworkError;
+            bool IsInvalid = state is InvalidOtpVerifyState &&
+                state.exception is! NetworkError;
             return ModalProgressHUD(
               inAsyncCall: state is LoadOtpState,
               blur: 0.01,
@@ -111,6 +112,9 @@ class _OtpScreenState extends State<OtpScreen> {
                   Pinput(
                     length: 6,
                     defaultPinTheme: PinTheme(
+                      textStyle: const TextStyle(
+                        color: AppColors.blackTextColor,
+                      ),
                       height: 53,
                       width: 53,
                       decoration: BoxDecoration(
@@ -125,6 +129,9 @@ class _OtpScreenState extends State<OtpScreen> {
                       );
                     },
                     errorPinTheme: PinTheme(
+                      textStyle: const TextStyle(
+                        color: AppColors.blackTextColor,
+                      ),
                       height: 53,
                       width: 53,
                       decoration: BoxDecoration(
@@ -161,42 +168,6 @@ class _OtpScreenState extends State<OtpScreen> {
                       );
                     },
                   ),
-                  /*
-                  OtpTextField(
-                    fieldHeight: 53,
-                    fieldWidth: 53,
-                    clearText: IsInvalid,
-                    numberOfFields: 6,
-                    enabledBorderColor: IsInvalid ? Colors.red : Colors.blue,
-                    borderColor: Colors.blue,
-                    showFieldAsBox: true,
-                    onCodeChanged: (String code) {},
-                    onSubmit: (String verificationCode) {
-                      verifyModel.doIntent(
-                        VerifyCode(code: verificationCode),
-                      );
-                    }, // end onSubmit
-                  ),*/
-                  /*
-                  if (IsInvalid)
-                    const Padding(
-                      padding: const EdgeInsets.only(right: 25),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Icon(
-                            Icons.error_outline,
-                            color: Colors.red,
-                          ),
-                          Text(
-                            'Invalid Code',
-                            style: TextStyle(
-                              color: Colors.red,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),*/
                   const SizedBox(
                     height: 20,
                   ),

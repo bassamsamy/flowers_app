@@ -31,6 +31,20 @@ import '../../features/auth/presentation/cubits/opt_verify_cubit/otp_verify_cubi
     as _i622;
 import '../../features/auth/presentation/cubits/reset_password_cubit/reset_password_cubit.dart'
     as _i374;
+import '../../features/home/data/home_data_source/home_data_source.dart'
+    as _i772;
+import '../../features/home/data/home_data_source_impl/home_data_source_impl.dart'
+    as _i1009;
+import '../../features/home/data/home_repo_impl/home_repo_impl.dart' as _i989;
+import '../../features/home/domain/home_repo/home_repo.dart' as _i8;
+import '../../features/home/domain/useCases/get_category_products_use_case.dart'
+    as _i544;
+import '../../features/home/domain/useCases/get_occasion_products_use_case.dart'
+    as _i423;
+import '../../features/home/presentation/cubits/occasion_cubit/occasions_cubit.dart'
+    as _i747;
+import '../../features/layout/presentation/views/categories_cubit/categories_cubit.dart'
+    as _i478;
 import '../../features/splash/data/auto_login_data_source/auto_login_data_source.dart'
     as _i537;
 import '../../features/splash/data/auto_login_data_source_imp/auto_login_data_source_impl.dart'
@@ -64,16 +78,28 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i146.AutoLoginRepoImp(gh<_i537.AutoLoginDataSource>()));
     gh.factory<_i595.GetUserDataUseCase>(
         () => _i595.GetUserDataUseCase(gh<_i372.AutoLoginRepo>()));
+    gh.factory<_i772.HomeDataSource>(
+        () => _i1009.HomeDataSourceImpl(apiManager: gh<_i811.ApiManager>()));
     gh.factory<_i649.AuthRepo>(
         () => _i574.AuthRepoImpl(authDataSource: gh<_i410.AuthDataSource>()));
     gh.factory<_i617.LoginUseCase>(
         () => _i617.LoginUseCase(gh<_i649.AuthRepo>()));
+    gh.factory<_i8.HomeRepo>(
+        () => _i989.HomeRepoImpl(homeDataSource: gh<_i772.HomeDataSource>()));
     gh.factory<_i438.ForgetPasswordUseCase>(
         () => _i438.ForgetPasswordUseCase(authRepo: gh<_i649.AuthRepo>()));
-    gh.factory<_i661.VerifyOtpUseCase>(
-        () => _i661.VerifyOtpUseCase(authRepo: gh<_i649.AuthRepo>()));
     gh.factory<_i799.ResetPasswordUseCase>(
         () => _i799.ResetPasswordUseCase(authRepo: gh<_i649.AuthRepo>()));
+    gh.factory<_i661.VerifyOtpUseCase>(
+        () => _i661.VerifyOtpUseCase(authRepo: gh<_i649.AuthRepo>()));
+    gh.factory<_i423.GetOccasionProductsUseCase>(
+        () => _i423.GetOccasionProductsUseCase(homeRepo: gh<_i8.HomeRepo>()));
+    gh.factory<_i544.GetCategoryProductsUseCase>(
+        () => _i544.GetCategoryProductsUseCase(homeRepo: gh<_i8.HomeRepo>()));
+    gh.factory<_i747.OccasionViewModel>(() => _i747.OccasionViewModel(
+        getOccasionProductsUseCase: gh<_i423.GetOccasionProductsUseCase>()));
+    gh.factory<_i478.CategoryViewModel>(() => _i478.CategoryViewModel(
+        getCategoryProductsUseCase: gh<_i544.GetCategoryProductsUseCase>()));
     gh.factory<_i622.OtpVerifyViewModel>(() => _i622.OtpVerifyViewModel(
         verifyOtpUseCase: gh<_i661.VerifyOtpUseCase>()));
     gh.factory<_i351.ForgetPasswordViewModel>(() =>

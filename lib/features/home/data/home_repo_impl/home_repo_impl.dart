@@ -1,4 +1,7 @@
+import 'package:flowers_app/core/models/result.dart';
 import 'package:flowers_app/features/home/data/home_data_source/home_data_source.dart';
+import 'package:flowers_app/features/home/domain/entities/occasion_entity.dart';
+import 'package:flowers_app/features/home/domain/entities/product_entity.dart';
 import 'package:flowers_app/features/home/domain/home_repo/home_repo.dart';
 import 'package:injectable/injectable.dart';
 
@@ -7,4 +10,9 @@ class HomeRepoImpl implements HomeRepo {
   HomeRepoImpl({required this.homeDataSource});
 
   HomeDataSource homeDataSource;
+  
+  @override
+  Future<Result<List<ProductEntity>?>> getProducts(Map<String,dynamic>occasionId) {
+    return homeDataSource.getProducts(occasionId);
+  }
 }

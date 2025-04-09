@@ -28,8 +28,8 @@ class ApiManager {
     );
   }
 
-  Future<Response> get(String endPoint, {dynamic headers}) async {
-    return await _dio.get(endPoint, options: Options(headers: headers));
+  Future<Response> get(String endPoint, {Map<String, dynamic>? queryParams,dynamic headers}) async {
+    return await _dio.get(endPoint, options: Options(headers: headers),queryParameters: queryParams);
   }
 
   Future<Response> delete(String endPoint,

@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: RouteGenerator.generateRoutes,
+      //initialRoute: RoutesNames.occasions,
       title: "Flowers App",
       theme: AppTheme.myTheme,
     );

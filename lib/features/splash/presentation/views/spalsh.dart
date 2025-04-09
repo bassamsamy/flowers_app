@@ -47,8 +47,6 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
     cubit.autoLogin();
 
     _authSubscription = cubit.stream.listen((state) {
-
-
       if (state is AutoLoginSuccess) {
         if (mounted) {
           Navigator.pushReplacementNamed(context, RoutesNames.layout);
@@ -61,12 +59,12 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
     });
   }
 
-
   @override
   void dispose() {
     _authSubscription?.cancel();
     _controller.dispose();
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
     super.dispose();
   }
 

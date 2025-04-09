@@ -9,7 +9,7 @@ import '../../../../core/exceptions/exceptions_impl.dart';
 import '../../../../core/models/user_model.dart';
 import '../auto_login_data_source/auto_login_data_source.dart';
 
-@Injectable(as : AutoLoginDataSource)
+@Injectable(as: AutoLoginDataSource)
 class AutoLoginDataSourceImp implements AutoLoginDataSource {
   const AutoLoginDataSourceImp(this._apiManager);
 

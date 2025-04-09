@@ -5,6 +5,7 @@ import 'package:flowers_app/features/auth/presentation/cubits/forget_password_cu
 import 'package:flowers_app/features/auth/presentation/cubits/forget_password_cubtit/forget_password_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+
 @injectable
 class ForgetPasswordViewModel extends Cubit<ForgetPasswordState> {
   ForgetPasswordUseCase forgetPasswordUseCase;
@@ -25,14 +26,15 @@ class ForgetPasswordViewModel extends Cubit<ForgetPasswordState> {
     switch (data) {
       case Success():
         {
-          emit(NavigatForgetPasswordState(route: RoutesNames.opt),);
-          
+          emit(
+            NavigatForgetPasswordState(route: RoutesNames.opt),
+          );
         }
       case Error():
         {
           emit(
             InvalidForgetPasswordState(
-              errorex:data.exception,
+              errorex: data.exception,
             ),
           );
         }
