@@ -2,9 +2,10 @@ import 'package:flowers_app/core/resources/AppColors.dart';
 import 'package:flowers_app/features/layout/presentation/views/profile_Screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../../home/presentation/views/HomeScreen.dart';
 import 'cart_screen.dart';
 import 'categories_screen.dart';
-import 'home_screen.dart';
+
 
 class Layout extends StatefulWidget {
   @override
