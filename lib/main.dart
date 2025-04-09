@@ -5,7 +5,7 @@ import 'package:flowers_app/core/routes_manager/routes_names.dart';
 import 'package:flowers_app/features/home/presentation/views/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
-import 'core/di/di.dart';
+
 
 void main() {
   configureDependencies();
