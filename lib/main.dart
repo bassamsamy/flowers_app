@@ -3,7 +3,8 @@ import 'package:flowers_app/core/di/di.dart';
 import 'package:flowers_app/core/routes_manager/route_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-port 'features/auth/domain/auth_repo/auth_repo.dart';
+
+import 'features/auth/domain/auth_repo/auth_repo.dart';
 import 'features/auth/domain/useCases/signup.dart';
 import 'features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 
