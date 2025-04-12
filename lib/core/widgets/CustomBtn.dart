@@ -13,20 +13,24 @@ class Custombtn extends StatelessWidget {
       height: 48,
       width: 370,
       child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-              backgroundColor: ispressed
-                  ? AppColors.primaryColor
-                  : AppColors.backgroundColor,
-              disabledBackgroundColor: AppColors.darkGrey,
-              shape: const StadiumBorder(
-                  side: BorderSide(
-                color: AppColors.grey,
-              ))),
-          onPressed: onPressed,
-          child: Text(
-            name,
-            style: const TextStyle(color: Colors.white),
-          )),
+        style: ElevatedButton.styleFrom(
+          backgroundColor:
+              ispressed ? AppColors.primaryColor : AppColors.backgroundColor,
+          disabledBackgroundColor: AppColors.darkGrey,
+          shape: const StadiumBorder(
+            side: BorderSide(
+              color: AppColors.grey,
+            ),
+          ),
+        ),
+        onPressed: onPressed,
+        child: Text(
+          name,
+          style: const TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
     );
   }
 }

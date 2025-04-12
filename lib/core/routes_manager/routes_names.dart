@@ -7,4 +7,5 @@ class RoutesNames {
   static const String login = "/login";
   static const String signUp = "/signUp";
   static const String terms = "/terms";
+  static const String productDetailScreen = "/ProductDetailScreen";
 }

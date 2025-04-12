@@ -1,14 +1,15 @@
 import 'package:flowers_app/core/routes_manager/routes_names.dart';
+import 'package:flowers_app/features/auth/domain/useCases/login_use_case.dart';
+import 'package:flowers_app/features/auth/presentation/cubits/login_cubit/login_cubit.dart';
 import 'package:flowers_app/features/auth/presentation/views/forget_password.dart';
 import 'package:flowers_app/features/auth/presentation/views/otp_view.dart';
 import 'package:flowers_app/features/auth/presentation/views/reset_password.dart';
-import 'package:flowers_app/features/auth/domain/useCases/login_use_case.dart';
-import 'package:flowers_app/features/auth/presentation/cubits/login_cubit/login_cubit.dart';
 import 'package:flowers_app/features/layout/presentation/views/layout.dart';
 import 'package:flowers_app/features/splash/presentation/cubits/auto_login_cubit/auto_login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../features/auth/presentation/views/details.dart';
 import '../../features/auth/presentation/views/login_view.dart';
 import '../../features/auth/presentation/views/signup.dart';
 import '../../features/auth/presentation/views/terms.dart';
@@ -25,6 +26,11 @@ class RouteGenerator {
             create: (context) => AutoLoginCubit(getIt<GetUserDataUseCase>()),
             child: const SplashView(),
           ),
+          settings: settings,
+        );
+      case RoutesNames.productDetailScreen:
+        return MaterialPageRoute(
+          builder: (context) => const ProductDetailScreen(),
           settings: settings,
         );
       case RoutesNames.signUp:

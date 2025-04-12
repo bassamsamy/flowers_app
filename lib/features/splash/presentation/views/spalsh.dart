@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flowers_app/core/resources/AppColors.dart';
 import 'package:flowers_app/core/resources/constants_manger.dart';
 import 'package:flowers_app/core/routes_manager/routes_names.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../cubits/auto_login_cubit/auto_login_cubit.dart';
 
@@ -47,26 +47,25 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
     cubit.autoLogin();
 
     _authSubscription = cubit.stream.listen((state) {
-
-
       if (state is AutoLoginSuccess) {
         if (mounted) {
           Navigator.pushReplacementNamed(context, RoutesNames.layout);
         }
       } else if (state is AutoLoginFailure) {
         if (mounted) {
-          Navigator.pushReplacementNamed(context, RoutesNames.login);
+          Navigator.pushReplacementNamed(
+              context, RoutesNames.productDetailScreen);
         }
       }
     });
   }
 
-
   @override
   void dispose() {
     _authSubscription?.cancel();
     _controller.dispose();
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
     super.dispose();
   }
 

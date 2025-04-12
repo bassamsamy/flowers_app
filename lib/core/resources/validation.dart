@@ -24,7 +24,8 @@ class Validation {
     if (value == null || value.isEmpty) {
       return 'Please enter your email';
     }
-    final emailRegex = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
+    final emailRegex =
+        RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
     if (!emailRegex.hasMatch(value)) {
       return 'Please enter a valid email address';
     }
@@ -35,9 +36,9 @@ class Validation {
     if (value == null || value.isEmpty) {
       return 'Please enter your Number';
     }
-    final phoneRegex = RegExp(r'^01\d{9}$');
+    final phoneRegex = RegExp(r'^\+2\d{11}$');
     if (!phoneRegex.hasMatch(value)) {
-      return 'Please enter a valid Number';
+      return 'Please enter a valid Number starting with +2';
     }
     return null;
   }
@@ -56,7 +57,6 @@ class Validation {
     } else if (value.length != 1) {
       return 'please enter 1 digits';
     }
-
     return null;
   }
 
